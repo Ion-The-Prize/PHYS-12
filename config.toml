@@ -1,60 +1,118 @@
-baseurl         = "https://ion-the-prize.github.io/PHYS-12/"
-theme           = "hugo-casper3"
-languageCode    = "en-US"
-disqusShortname = ""
-paginate        = 6
-#SectionPagesMenu = "main"
+# Site settings
+baseurl = "/"
+languageCode = "en-us"
+title = "Okkur - Syna"
+theme = "syna"
+enableGitInfo = true
+version = "0.17.3"
+
+# Google Analytics tracking
+googleAnalytics = ""
+
+disableKinds = ["RSS", "taxonomy", "taxonomyTerm"]
+
+[outputs]
+  home = ["HTML", "JSON"]
+
+[frontmatter]
+date = ["date", "lastmod"]
+lastmod = ["lastmod", ":git", "date"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+     unsafe = true
 
 [params]
-  title       = "PHYS-12: Intro to Digital Fabrication"
-  subtitle    = "Aubrey Bee-Lindgren's Project Portfolio"
+  name = "Okkur Labs"
+  description = "Open Source Theme for your next project"
 
-  cover       = "img/blog-cover.jpg"
-  description = "Here is a description of your site."
-  metaDescription = ""
-  googleAnalytics = ""
-  customCSS = []
-  RSSLink = ""
+  [params.style]
+    #background = "secondary"
 
-  twitterName = "faketryghost"
-  fbName = "fakeghost"
-  githubName = "eueung"
+  # Theme customizations
+  # Assets relative to 'static/'
+  [params.custom]
+    favicon = "favicon.ico"
+    favicon_ico_sizes = "16x16 32x32"
+    favicon_png = "favicon.png"
+    favicon_svg = "favicon.svg"
 
-  logo = "hugo-logo.png"
-  orgName = "EM"
-  orgWebsite = "https://www.telematika.org"
-  orgDescription = "Here is a description placeholder for your org"
+  # Piwik tracking
+  [params.analytics.piwik]
+    #url = ""
+    #id = ""
+    #domain = "" # Track subdomains via "*.example.com"
+    # Optional hash for integrity check
+    #hash = "sha512-RfeD0pacGTqy9m7U6PgehQfS4cc7SIt+e+P+H5e848kEvB/RW84CUGO3O4O3LNbxjevym6KPUZ8muPsMrI8WIw=="
 
-  author = "EM"
-  authorAvatar = "img/ghost-icon.png"
-  authorLocation = "Bandung, ID"
-  authorWebsite = "https://eueung.github.io"
-  authorDescription = "Describe yourself.."
+  # Optional, global disable switch for fontawesome related files
+  # For custom fontawesome js files use the custom.js method
+  [params.fontawesome]
+    disabled = false
+    pro = false
 
-  pageNotFoundTitle = "404 - Page not found"
+  [params.colors]
+    primary = "#00838F"
+    secondary = "#868e96"
+    success = "#008f54"
+    info = "#00c9dc"
+    warning = "#fdf314"
+    danger = "#dc1200"
+    light = "#f8f9fa"
+    dark = "#343a40"
 
-  #casper or caspertwo
-  singleViewStyle = "casper"
-
-[permalinks]
-  post = "/:slug/"
-
+# main/prepend/postpend menus are displayed in nav fragment.
+# Keep an eye out for updates. These will be moved out to make navbar more
+# configurable.
 [[menu.main]]
-  name = "Home"
   url = "/"
-  weight = 200
+  name = "Home"
+  weight = 10
 
 [[menu.main]]
-  name = "Go"
-  url = "/tags/golang/"
-  weight = 100
+  url = "/about"
+  name = "About Us"
+  weight = 20
 
 [[menu.main]]
-  name = "Food"
-  url = "/categories/food/"
-  weight = 99
+  url = "#contact"
+  name = "Contact"
+  weight = 30
 
-[[menu.main]]
-  name = "External"
-  url = "https://google.com/"
-  weight = 95
+[[menu.footer]]
+  url = "#"
+  name = "Link"
+  weight = 10
+
+[[menu.footer]]
+  url = "#"
+  name = "Long Link"
+  weight = 30
+
+[[menu.footer]]
+  url = "#"
+  name = "Tiny Link"
+  weight = 30
+
+[[menu.copyright_footer]]
+  url = "/about"
+  name = "About Us"
+  weight = 10
+
+[[menu.copyright_footer]]
+  url = "#"
+  name = "Another Link"
+  weight = 30
+
+[[menu.footer_social]]
+  weight = 20
+  name = "facebook"
+  pre = "fab fa-facebook-f"
+  url = "#"
+
+[[menu.footer_social]]
+  weight = 30
+  name = "linkedin"
+  pre = "fab fa-linkedin-in"
+  url = "#"
